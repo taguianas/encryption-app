@@ -12,9 +12,23 @@ const PORT = process.env.PORT || 5000;
 
 app.use(helmet());
 //  VERROUILLAGE DES PORTES (CORS Restreint)
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://securecrypt-app.onrender.com' 
+];
+
 app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST'] // On autorise seulement ces deux actions
+    origin: function (origin, callback) {
+        // Autorise les requêtes sans origine (comme Postman ou mobile apps)
+        if (!origin) return callback(null, true);
+        
+        if (allowedOrigins.indexOf(origin) === -1) {
+            var msg = 'La politique CORS interdit l\'accès depuis cette origine.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
+    methods: ['GET', 'POST']
 }));
 app.use(bodyParser.json());
 
