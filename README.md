@@ -24,13 +24,13 @@
 <br />
 </div>
 
-📖 About The Project
+## 📖 About The Project
 
 SecureCrypt is a full-stack cryptographic application designed to demonstrate secure data transmission and storage principles. Unlike simple text obfuscators, SecureCrypt implements industry-standard algorithms (AES-GCM & RSA-OAEP) to ensure confidentiality, integrity, and authenticity.
 
 The application features a modern, responsive React frontend communicating with a hardened Node.js/Express backend, secured via standard HTTP security headers (Helmet) and strict CORS policies.
 
-📸 Interface Gallery
+## 📸 Interface Gallery
 
 <!-- TABLEAU HTML : GALERIE -->
 
@@ -69,55 +69,55 @@ The application features a modern, responsive React frontend communicating with 
 </tr>
 </table>
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-Frontend (Client)
+### Frontend (Client)
 
-React.js 18 - Component-based UI.
+**React.js 18** - Component-based UI.
 
-Tailwind CSS - Utility-first styling for dark mode.
+**Tailwind CSS** - Utility-first styling for dark mode.
 
-Lucide React - Modern iconography.
+**Lucide React** - Modern iconography.
 
-Backend (Server)
+### Backend (Server)
 
-Node.js - Runtime environment.
+**Node.js** - Runtime environment.
 
-Express.js - REST API Framework.
+**Express.js** - REST API Framework.
 
-Native Crypto - Zero-dependency cryptography implementation.
+**Native Crypto** - Zero-dependency cryptography implementation.
 
-Infrastructure & Security
+### Infrastructure & Security
 
-Helmet.js - HTTP Header hardening.
+**Helmet.js** - HTTP Header hardening.
 
-CORS - Strict Origin Resource Sharing.
+**CORS** - Strict Origin Resource Sharing.
 
-Render - Cloud Deployment (CI/CD).
+**Render** - Cloud Deployment (CI/CD).
 
-🔐 Security Architecture
+## 🔐 Security Architecture
 
 This project follows the "Secure by Design" principle.
 
-1. Symmetric Encryption (AES-256-GCM)
+### 1. Symmetric Encryption (AES-256-GCM)
 
 We moved away from the older CBC mode to GCM (Galois/Counter Mode).
 
-Why? CBC is malleable (vulnerable to bit-flipping attacks).
+**Why?** CBC is malleable (vulnerable to bit-flipping attacks).
 
-Solution: GCM provides an Authentication Tag. If the encrypted payload is tampered with during transit, the decryption will fail instantly, preserving data integrity.
+**Solution:** GCM provides an Authentication Tag. If the encrypted payload is tampered with during transit, the decryption will fail instantly, preserving data integrity.
 
-IV: A unique 12-byte Initialization Vector is generated for every request.
+**IV:** A unique 12-byte Initialization Vector is generated for every request.
 
-2. Asymmetric Encryption (RSA-2048-OAEP)
+### 2. Asymmetric Encryption (RSA-2048-OAEP)
 
-Padding: We utilize OAEP (Optimal Asymmetric Encryption Padding) with SHA-256.
+**Padding:** We utilize OAEP (Optimal Asymmetric Encryption Padding) with SHA-256.
 
-Protection: Prevents Padding Oracle Attacks which affect older PKCS#1 v1.5 implementations.
+**Protection:** Prevents Padding Oracle Attacks which affect older PKCS#1 v1.5 implementations.
 
-Key Format: Keys are exported in standard PEM format (PKCS#8 for private keys).
+**Key Format:** Keys are exported in standard PEM format (PKCS#8 for private keys).
 
-3. Application Flow
+### 3. Application Flow
 
 sequenceDiagram
     participant User
@@ -136,11 +136,11 @@ sequenceDiagram
     Client->>User: Displays Encrypted Data
 
 
-📚 API Reference
+## 📚 API Reference
 
 The backend exposes a RESTful API.
 
-POST /api/encrypt
+`POST /api/encrypt`
 
 Encrypts plain text using the specified algorithm.
 
@@ -173,7 +173,7 @@ Encrypts plain text using the specified algorithm.
 </tbody>
 </table>
 
-POST /api/decrypt
+`POST /api/decrypt`
 
 Decrypts a cipher string.
 
@@ -206,7 +206,7 @@ Decrypts a cipher string.
 </tbody>
 </table>
 
-🚀 Getting Started
+## 🚀 Getting Started
 
 To run this project locally, follow these steps.
 
@@ -225,21 +225,22 @@ git clone https://github.com/taguianas/encryption-app.git
 
 Setup Backend
 
-cd server
+```cd server
 npm install
 #Create .env file
 echo "PORT=5000" > .env
 npm start
+```
 
 
 Setup Frontend (In a new terminal)
 
-cd client
+```cd client
 npm install
 npm start
+```
 
-
-🤝 Contributing
+### 🤝 Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
@@ -253,11 +254,12 @@ Push to the Branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
 
-📜 License
+### 📜 License
 
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <br />
 <div align="center">
 <small>Developed by taguianas • 2025</small>
 </div>
+
