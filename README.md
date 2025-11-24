@@ -37,7 +37,7 @@ The application features a modern, responsive React frontend communicating with 
 <table width="100%">
 <tr>
 <td align="center" width="50%">
-<img src="assets/home-screen.png" alt="Home Screen" style="width: 100%">
+<img src="screenshots/home-screen.png" alt="Home Screen" style="width: 100%">
 <br />
 <strong>Home & Dashboard</strong>
 <br />
@@ -53,14 +53,14 @@ The application features a modern, responsive React frontend communicating with 
 </tr>
 <tr>
 <td align="center" width="50%">
-<img src="assets/rsa-keygen.png" alt="RSA KeyGen" style="width: 100%">
+<img src="screenshots/rsa-keygen.png" alt="RSA KeyGen" style="width: 100%">
 <br />
 <strong>RSA Key Management</strong>
 <br />
 <em>2048-bit Key pair generation & export.</em>
 </td>
 <td align="center" width="50%">
-<img src="assets/history-feature.png" alt="History" style="width: 100%">
+<img src="screenshots/history-feature.png" alt="History" style="width: 100%">
 <br />
 <strong>Activity History</strong>
 <br />
