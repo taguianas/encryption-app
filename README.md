@@ -44,7 +44,7 @@ The application features a modern, responsive React frontend communicating with 
 <em>Clean Dark Mode UI with intuitive navigation.</em>
 </td>
 <td align="center" width="50%">
-<img src="assets/aes-demo.png" alt="AES Encryption" style="width: 100%">
+<img src="screenshots/aes-demo.png" alt="AES Encryption" style="width: 100%">
 <br />
 <strong>AES Encryption (GCM)</strong>
 <br />
