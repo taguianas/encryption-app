@@ -69,7 +69,7 @@ export default function EncryptionApp() {
 
     // Vrai appel fetch vers le serveur Node.js
     const API_BASE_URL = process.env.NODE_ENV === 'production' 
-    ? 'https://encryption-app-1.onrender.com' // <--- On changera ça à l'étape 3
+    ? 'https://encryption-app-1.onrender.com' 
     : 'http://localhost:5000';
     
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
