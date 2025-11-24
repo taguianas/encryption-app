@@ -210,20 +210,20 @@ Decrypts a cipher string.
 
 To run this project locally, follow these steps.
 
-Prerequisites
+### Prerequisites
 
 Node.js (v16 or higher)
 
 npm or yarn
 
-Installation
+### Installation
 
-Clone the repo
+**Clone the repo**
 
-git clone https://github.com/taguianas/encryption-app.git
+`git clone https://github.com/taguianas/encryption-app.git`
 
 
-Setup Backend
+**Setup Backend**
 
 ```cd server
 npm install
@@ -233,7 +233,7 @@ npm start
 ```
 
 
-Setup Frontend (In a new terminal)
+**Setup Frontend** (In a new terminal)
 
 ```cd client
 npm install
@@ -246,11 +246,11 @@ Contributions are what make the open source community such an amazing place to l
 
 Fork the Project
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
+Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 
-Commit your Changes (git commit -m 'Add some AmazingFeature')
+Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 
-Push to the Branch (git push origin feature/AmazingFeature)
+Push to the Branch (`git push origin feature/AmazingFeature`)
 
 Open a Pull Request
 
@@ -262,4 +262,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <div align="center">
 <small>Developed by taguianas • 2025</small>
 </div>
+
 
