@@ -9,9 +9,7 @@
 <p>
 <a href="https://securecrypt-app.onrender.com">🔴 <strong>View Live Demo</strong></a>
 &nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="#-getting-started">🚀 <strong>Getting Started</strong></a>
-&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="#-api-reference">📚 <strong>API Docs</strong></a>
+<a href="DOCS_TECHNICAL.md">⚙️ <strong>Installation & API</strong></a>
 </p>
 
 <p>
@@ -20,6 +18,7 @@
 <img src="https://www.google.com/search?q=https://img.shields.io/badge/security-A%252B-blue" alt="Security Rating" />
 <img src="https://www.google.com/search?q=https://img.shields.io/badge/maintained%253F-yes-green.svg" alt="Maintained" />
 </p>
+
 <br />
 </div>
 
