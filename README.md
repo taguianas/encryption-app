@@ -15,12 +15,11 @@
 </p>
 
 <p>
-<img src="https://img.shields.io/badge/status-active-success.svg" alt="Status" />
-<img src="https://img.shields.io/github/license/taguianas/encryption-app" alt="License" />
-<img src="https://img.shields.io/badge/security-A%2B-blue" alt="Security Rating" />
-<img src="https://img.shields.io/badge/maintained%3F-yes-green.svg" alt="Maintained" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/status-active-success.svg" alt="Status" />
+<img src="https://www.google.com/search?q=https://img.shields.io/github/license/taguianas/encryption-app" alt="License" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/security-A%252B-blue" alt="Security Rating" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/maintained%253F-yes-green.svg" alt="Maintained" />
 </p>
-
 <br />
 </div>
 
@@ -135,132 +134,7 @@ sequenceDiagram
     Server-->>Client: Returns { IV : Tag : CipherText }
     Client->>User: Displays Encrypted Data
 
-
-## 📚 API Reference
-
-The backend exposes a RESTful API.
-
-`POST /api/encrypt`
-
-Encrypts plain text using the specified algorithm.
-
-<!-- TABLEAU HTML : ENCRYPT API -->
-
-<table width="100%">
-<thead>
-<tr>
-<th width="20%">Parameter</th>
-<th width="15%">Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>type</code></td>
-<td><code>string</code></td>
-<td>"AES" or "RSA"</td>
-</tr>
-<tr>
-<td><code>text</code></td>
-<td><code>string</code></td>
-<td>The message to encrypt</td>
-</tr>
-<tr>
-<td><code>key</code></td>
-<td><code>string</code></td>
-<td>Secret Key (AES) or Public Key (RSA)</td>
-</tr>
-</tbody>
-</table>
-
-`POST /api/decrypt`
-
-Decrypts a cipher string.
-
-<!-- TABLEAU HTML : DECRYPT API -->
-
-<table width="100%">
-<thead>
-<tr>
-<th width="20%">Parameter</th>
-<th width="15%">Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>type</code></td>
-<td><code>string</code></td>
-<td>"AES" or "RSA"</td>
-</tr>
-<tr>
-<td><code>encryptedData</code></td>
-<td><code>string</code></td>
-<td>Format: <code>IV:Tag:Cipher</code> (AES)</td>
-</tr>
-<tr>
-<td><code>key</code></td>
-<td><code>string</code></td>
-<td>Secret Key (AES) or Private Key (RSA)</td>
-</tr>
-</tbody>
-</table>
-
-## 🚀 Getting Started
-
-To run this project locally, follow these steps.
-
-### Prerequisites
-
-Node.js (v16 or higher)
-
-npm or yarn
-
-### Installation
-
-**Clone the repo**
-
-`git clone https://github.com/taguianas/encryption-app.git`
-
-
-**Setup Backend**
-
-```cd server
-npm install
-#Create .env file
-echo "PORT=5000" > .env
-npm start
-```
-
-
-**Setup Frontend** (In a new terminal)
-
-```cd client
-npm install
-npm start
-```
-
-### 🤝 Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-Fork the Project
-
-Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-
-Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-
-Push to the Branch (`git push origin feature/AmazingFeature`)
-
-Open a Pull Request
-
-### 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<br />
-<div align="center">
-<small>Developed by taguianas • 2025</small>
+    <div align="center">
+<small>Check <a href="DOCS_TECHNICAL.md">DOCS_TECHNICAL.md</a> for Installation & API Reference.</small>
 </div>
-
 
