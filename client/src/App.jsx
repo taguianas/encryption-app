@@ -2,16 +2,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Lock, Unlock, Shield, Key, RefreshCw, ArrowRight, Copy, CheckCircle, Server, Download, History, LogOut, User, FileSignature, ShieldAlert, Eye, EyeOff, Trash2 } from 'lucide-react';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-    ? 'https://encryption-app-1.onrender.com' 
+    ? 'https://encryption-app-xfd4.onrender.com' 
     : 'http://localhost:5000';
 
 function Auth({ onLogin }) {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  
   const [showPassword, setShowPassword] = useState(false);
-  
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -19,21 +17,11 @@ function Auth({ onLogin }) {
     e.preventDefault(); setError(''); setLoading(true);
     const endpoint = isLogin ? '/api/login' : '/api/register';
     try {
-      if (isLogin) {
-        const response = await fetch(`${API_BASE_URL}/api/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.error);
-        onLogin(data.token, data.username);
-      } else {
-        const regResponse = await fetch(`${API_BASE_URL}/api/register`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
-        const regData = await regResponse.json();
-        if (!regResponse.ok) throw new Error(regData.error);
-        
-        const loginResponse = await fetch(`${API_BASE_URL}/api/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
-        const loginData = await loginResponse.json();
-        if (!loginResponse.ok) throw new Error("Erreur auto-login");
-        onLogin(loginData.token, loginData.username);
-      }
+      const response = await fetch(`${API_BASE_URL}${endpoint}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error);
+      if (isLogin) onLogin(data.token, data.username);
+      else { setIsLogin(true); setError(''); setUsername(''); setPassword(''); alert("Inscription réussie !"); }
     } catch (err) { setError(err.message); } finally { setLoading(false); }
   };
 
@@ -52,29 +40,11 @@ function Auth({ onLogin }) {
             <User className="w-5 h-5 text-slate-500 absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
             <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="w-full bg-slate-900 border border-slate-700 rounded-xl py-3 pl-10 pr-4 text-white focus:border-indigo-500 outline-none" placeholder="Nom d'utilisateur" required />
           </div>
-          
           <div className="relative">
+            
             <Lock className="w-5 h-5 text-slate-500 absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
-            
-            <input 
-                type={showPassword ? "text" : "password"} 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                className="w-full bg-slate-900 border border-slate-700 rounded-xl py-3 pl-10 pr-12 text-white focus:border-indigo-500 outline-none" 
-                placeholder="Mot de passe" 
-                required 
-            />
-            
-            <button 
-                type="button" 
-                onClick={() => setShowPassword(!showPassword)} 
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white hover:text-indigo-400 transition-colors"
-                title={showPassword ? "Masquer" : "Afficher"}
-            >
-                {showPassword ? <EyeOff className="w-5 h-5"/> : <Eye className="w-5 h-5"/>}
-            </button>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full bg-slate-900 border border-slate-700 rounded-xl py-3 pl-10 pr-4 text-white focus:border-indigo-500 outline-none" placeholder="Mot de passe" required />
           </div>
-
           {error && <div className="p-3 bg-red-500/10 text-red-400 text-sm rounded-lg text-center">{error}</div>}
           <button disabled={loading} className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all disabled:opacity-50">
             {loading ? "..." : (isLogin ? "Se connecter" : "Créer le compte")}
@@ -156,8 +126,6 @@ export default function EncryptionApp() {
     } catch (e) { setError("Erreur clés."); } finally { setLoading(false); }
   };
 
-  const copyToClipboard = (text) => { if (text) { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); } };
-
   const downloadKeys = () => { 
       if (!rsaKeys.publicKey || !rsaKeys.privateKey) return;
       const downloadFile = (filename, content) => {
@@ -172,6 +140,8 @@ export default function EncryptionApp() {
       downloadFile('public_key.pem', rsaKeys.publicKey);
       setTimeout(() => downloadFile('private_key.pem', rsaKeys.privateKey), 500);
   };
+
+  const copyToClipboard = (text) => { if (text) { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); } };
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-200 font-sans relative">
@@ -216,7 +186,7 @@ export default function EncryptionApp() {
                                         <Download className="w-4 h-4" />
                                     </button>
                                 )}
-                                <button onClick={generateKeys} className="text-indigo-400 hover:text-indigo-300 bg-indigo-500/10 p-1.5 rounded"><RefreshCw className="w-4 h-4" /></button>
+                                <button onClick={generateKeys} className="text-indigo-400 hover:text-indigo-300 bg-indigo-500/10 p-1.5 rounded transition-colors"><RefreshCw className="w-4 h-4" /></button>
                             </div>
                         )}
                     </div>

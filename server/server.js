@@ -62,7 +62,7 @@ app.post('/api/login', async (req, res) => {
     const { username, password } = req.body;
     try {
         const user = await User.findOne({ username });
-        if (!user || !(await bcrypt.compare(password, user.password))) return res.status(400).json({ error: "Erreur identifiants" });
+        if (!user || !(await bcrypt.compare(password, user.password))) return res.status(400).json({ error: "identifiant ou password inccorect" });
         const token = jwt.sign({ _id: user._id, username: user.username }, process.env.JWT_SECRET, { expiresIn: '24h' });
         res.json({ token, username: user.username });
     } catch (err) { res.status(500).json({ error: "Erreur serveur" }); }
