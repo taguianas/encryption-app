@@ -4,7 +4,6 @@
 
 <p>
 <strong>Next-Gen End-to-End Encryption Platform</strong>
-</p>
 
 <p>
 <a href="https://securecrypt-app.onrender.com">🔴 <strong>View Live Demo</strong></a>
