@@ -12,12 +12,11 @@
 </p>
 
 <p>
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/status-active-success.svg" alt="Status" />
-<img src="https://www.google.com/search?q=https://img.shields.io/github/license/taguianas/encryption-app" alt="License" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/security-A%252B-blue" alt="Security Rating" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/maintained%253F-yes-green.svg" alt="Maintained" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Status-Active-success%3Fstyle%3Dfor-the-badge%26logo%3Dactivity" alt="Status" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/License-MIT-blue%3Fstyle%3Dfor-the-badge%26logo%3Dopen-source-initiative%26logoColor%3Dwhite" alt="License" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Security-A%252B-orange%3Fstyle%3Dfor-the-badge%26logo%3Dsecurity-scorecard%26logoColor%3Dwhite" alt="Security Rating" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Maintained-Yes-green%3Fstyle%3Dfor-the-badge%26logo%3Dgithub" alt="Maintained" />
 </p>
-
 <br />
 </div>
 
