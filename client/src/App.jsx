@@ -4,7 +4,7 @@ import { Lock, Unlock, Shield, Key, RefreshCw, ArrowRight, Copy, CheckCircle, Se
 const USE_MOCK_SERVER = false; 
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-    ? 'https://encryption-app-1.onrender.com' 
+    ? 'https://encryption-app-xfd4.onrender.com' 
     : 'http://localhost:5000';
 
 function Auth({ onLogin }) {
@@ -126,7 +126,6 @@ export default function EncryptionApp() {
     } catch (e) { setError("Erreur clés."); } finally { setLoading(false); }
   };
 
-  // --- NOUVEAU : FONCTION DE TÉLÉCHARGEMENT ---
   const downloadKeys = () => { 
       if (!rsaKeys.publicKey || !rsaKeys.privateKey) return;
       const downloadFile = (filename, content) => {

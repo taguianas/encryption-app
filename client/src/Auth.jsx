@@ -8,7 +8,6 @@ export default function Auth({ onLogin }) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // URL dynamique selon l'environnement (Même logique que App.jsx)
   const API_BASE_URL = process.env.NODE_ENV === 'production' 
     ? 'https://encryption-app-1.onrender.com' 
     : 'http://localhost:5000';
@@ -34,12 +33,10 @@ export default function Auth({ onLogin }) {
       }
 
       if (isLogin) {
-        // Connexion réussie : on remonte l'info au parent (App.jsx)
         onLogin(data.token, data.username);
       } else {
-        // Inscription réussie : on bascule vers le login
         setIsLogin(true);
-        setError(''); // Clear error
+        setError(''); 
         alert("Inscription réussie ! Connectez-vous.");
       }
 

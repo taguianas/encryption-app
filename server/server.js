@@ -13,7 +13,6 @@ const User = require('./models/User');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// --- MONGODB ---
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('🍃 MongoDB Connecté !'))
     .catch(err => console.error('❌ Erreur Mongo:', err));
@@ -27,7 +26,6 @@ const EncryptionLogSchema = new mongoose.Schema({
 });
 const EncryptionLog = mongoose.model('EncryptionLog', EncryptionLogSchema);
 
-// --- MIDDLEWARES ---
 app.use(helmet());
 const allowedOrigins = ['http://localhost:3000', 'https://securecrypt-app.onrender.com'];
 app.use(cors({
@@ -35,11 +33,10 @@ app.use(cors({
         if (!origin || allowedOrigins.indexOf(origin) !== -1) callback(null, true);
         else callback(null, true);
     },
-    methods: ['GET', 'POST', 'DELETE'] // Ajout de DELETE
+    methods: ['GET', 'POST', 'DELETE'] 
 }));
 app.use(bodyParser.json());
 
-// --- AUTH MIDDLEWARE ---
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
@@ -51,7 +48,6 @@ function authenticateToken(req, res, next) {
     });
 }
 
-// --- AUTH ROUTES ---
 app.post('/api/register', async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -72,7 +68,6 @@ app.post('/api/login', async (req, res) => {
     } catch (err) { res.status(500).json({ error: "Erreur serveur" }); }
 });
 
-// --- CRYPTO UTILS ---
 const ALGO_AES = 'aes-256-gcm';
 
 function encryptAES(text, secretKey) {
@@ -122,7 +117,6 @@ function verifySignature(text, signature, publicKey) {
     return verify.verify(publicKey, signature, 'base64');
 }
 
-// --- ROUTES CRYPTO ---
 
 app.get('/api/generate-keys', (req, res) => {
     try {
@@ -172,7 +166,6 @@ app.post('/api/verify', authenticateToken, (req, res) => {
     } catch (e) { res.status(500).json({ error: "Erreur vérification" }); }
 });
 
-// --- HISTORIQUE MIS À JOUR ---
 app.get('/api/history', authenticateToken, async (req, res) => {
     try {
         const logs = await EncryptionLog.find({ userId: req.user._id }).sort({ timestamp: -1 }).limit(10);
@@ -181,13 +174,12 @@ app.get('/api/history', authenticateToken, async (req, res) => {
             timestamp: new Date(l.timestamp).toLocaleTimeString(),
             algo: l.algo,
             mode: l.action,
-            content: l.encryptedData // On envoie TOUT le contenu, pas de substring
+            content: l.encryptedData 
         }));
         res.json(formatted);
     } catch (e) { res.status(500).json({ error: "Erreur historique" }); }
 });
 
-// --- NOUVEAU : SUPPRESSION D'UN LOG ---
 app.delete('/api/history/:id', authenticateToken, async (req, res) => {
     try {
         await EncryptionLog.deleteOne({ _id: req.params.id, userId: req.user._id });
