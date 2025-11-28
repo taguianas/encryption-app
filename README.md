@@ -12,11 +12,12 @@
 </p>
 
 <p>
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Status-Active-success%3Fstyle%3Dfor-the-badge%26logo%3Dactivity" alt="Status" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/License-MIT-blue%3Fstyle%3Dfor-the-badge%26logo%3Dopen-source-initiative%26logoColor%3Dwhite" alt="License" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Security-A%252B-orange%3Fstyle%3Dfor-the-badge%26logo%3Dsecurity-scorecard%26logoColor%3Dwhite" alt="Security Rating" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Maintained-Yes-green%3Fstyle%3Dfor-the-badge%26logo%3Dgithub" alt="Maintained" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Status-Active-success%3Fstyle%3Dfor-the-badge" alt="Status" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/License-MIT-blue%3Fstyle%3Dfor-the-badge" alt="License" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Security-A%252B-orange%3Fstyle%3Dfor-the-badge" alt="Security Rating" />
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Maintained-Yes-green%3Fstyle%3Dfor-the-badge" alt="Maintained" />
 </p>
+
 <br />
 </div>
 
