@@ -29,7 +29,6 @@ The application features a modern, responsive React frontend communicating with 
 
 ## 📸 Interface Gallery
 
-<!-- TABLEAU HTML : GALERIE -->
 
 <table width="100%">
 <tr>
