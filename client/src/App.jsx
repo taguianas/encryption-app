@@ -77,7 +77,7 @@ function Auth({ onLogin }) {
 
           {error && <div className="p-3 bg-red-500/10 text-red-400 text-sm rounded-lg text-center">{error}</div>}
           <button disabled={loading} className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all disabled:opacity-50">
-            {loading ? "..." : (isLogin ? "Ouvrir le coffre" : "Créer le compte")}
+            {loading ? "..." : (isLogin ? "Se connecter" : "Créer le compte")}
           </button>
         </form>
         <button onClick={() => setIsLogin(!isLogin)} className="w-full mt-6 text-sm text-slate-400 hover:text-indigo-400">{isLogin ? "Créer un compte" : "Se connecter"}</button>
