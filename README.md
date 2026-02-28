@@ -12,10 +12,10 @@
 </p>
 
 <p>
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Status-Active-success%3Fstyle%3Dfor-the-badge" alt="Status" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/License-MIT-blue%3Fstyle%3Dfor-the-badge" alt="License" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Security-A%252B-orange%3Fstyle%3Dfor-the-badge" alt="Security Rating" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Maintained-Yes-green%3Fstyle%3Dfor-the-badge" alt="Maintained" />
+<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status" />
+<img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
+<img src="https://img.shields.io/badge/Security-A%2B-orange?style=for-the-badge" alt="Security Rating" />
+<img src="https://img.shields.io/badge/Maintained-Yes-green?style=for-the-badge" alt="Maintained" />
 </p>
 
 <br />
@@ -134,4 +134,5 @@ sequenceDiagram
     <div align="center">
 <small>Check <a href="DOCS_TECHNICAL.md">DOCS_TECHNICAL.md</a> for Installation & API Reference.</small>
 </div>
+
 
